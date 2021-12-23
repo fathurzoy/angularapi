@@ -30,7 +30,7 @@ export class ProductComponent implements OnInit {
   loading: boolean;
   getBooks() {
     this.loading = true;
-    this.api.get('books').subscribe(
+    this.api.get('bookswithauth').subscribe(
       (result) => {
         this.books = result;
         this.loading = false;
@@ -40,6 +40,17 @@ export class ProductComponent implements OnInit {
         alert('Ada masalah saat pengambilan data. Coba lagi!');
       }
     );
+    // this.loading = true;
+    // this.api.get('books').subscribe(
+    //   (result) => {
+    //     this.books = result;
+    //     this.loading = false;
+    //   },
+    //   (error) => {
+    //     this.loading = false;
+    //     alert('Ada masalah saat pengambilan data. Coba lagi!');
+    //   }
+    // );
     // this.books = [
     //   {
     //     title: 'Angular untuk Pemula',
