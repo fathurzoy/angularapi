@@ -19,6 +19,7 @@
     </div>
     <table class="uk-table uk-table-middle uk-table-divider mat-elevation-z8">
       <thead>
+        <th></th>
         <th>No</th>
         <th>Judul</th>
         <th>Penulis</th>
@@ -29,6 +30,15 @@
       </thead>
       <tbody>
         <tr *ngFor="let book of books; let idx = index">
+          <td>
+            <button
+              mat-icon-button
+              *ngIf="book.url != ''"
+              (click)="downloadFile(book)"
+            >
+              <mat-icon>download</mat-icon>
+            </button>
+          </td>
           <td>{{ idx + 1 }}</td>
           <td>{{ book.title }}</td>
           <td>{{ book.author }}</td>

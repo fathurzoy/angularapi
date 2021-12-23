@@ -6,30 +6,31 @@ import { ForgotComponent } from './auth/forgot/forgot.component';
 
 const routes: Routes = [
   {
-    path:'login',
-    component:LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path:'register',
-    component:RegisterComponent
+    path: 'register',
+    component: RegisterComponent,
   },
   {
-    path:'forgot',
-    component:ForgotComponent
+    path: 'forgot',
+    component: ForgotComponent,
   },
   {
-    path:'admin',
-    loadChildren: ()=>import('./admin/admin.module').then(mod=>mod.AdminModule)
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((mod) => mod.AdminModule),
   },
   {
-    path:'',
-    redirectTo:'/login',
-    pathMatch:'full'
-  }
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

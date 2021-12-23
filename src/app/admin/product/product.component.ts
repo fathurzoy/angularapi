@@ -120,4 +120,9 @@ export class ProductComponent implements OnInit {
       return;
     });
   }
+
+  downloadFile(data) {
+    window.open('http://api.sunhouse.co.id/bookstore/' + data.url);
+    // FileSaver.saveAs('http://api.sunhouse.co.id/bookstore/' + data.url);
+  }
 }
