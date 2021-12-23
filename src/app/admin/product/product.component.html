@@ -36,6 +36,9 @@
           <td>{{ book.year }}</td>
           <td>{{ book.price }}</td>
           <td align="left">
+            <button mat-button color="primary" (click)="uploadFile(book)">
+              Upload
+            </button>
             <button
               mat-button
               color="primary"
